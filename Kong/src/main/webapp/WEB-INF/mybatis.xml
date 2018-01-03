@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	
+	<!-- MyBatis 실행 중 사용되는 옵션들 설정 -->
+	
+	<!-- Mapper에서 사용하는 자료형의 별칭 -->
+	<!-- <typeAliases>
+		<typeAlias type="com.kong.board.DTO.KongDTO" alias="dto"/>
+	</typeAliases> -->
+	
+	
+</configuration>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

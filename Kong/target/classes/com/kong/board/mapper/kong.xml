@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kong">
+	
+	<select id="nlist" resultType="com.kong.board.DTO.BoardDTO">
+		select * from board order by boardseq desc
+	</select>
+	
+	<select id="nvlist" resultType="com.kong.board.DTO.BoardDTO">
+		select * from board where boardseq= #{boardseq}
+	</select>
+	
+	<select id="add" resultType="com.kong.board.DTO.BoardDTO">
+		insert into board (title, ncontent, enrolltime, cnt_hit, userid) values (#{title},#{ncontent}, now(), '0', #{userid})
+	</select>
+	
+	<delete id="del" parameterType="String">
+		delete from board where boardseq= #{boardseq}
+	</delete>
+	
+	<update id="edit" parameterType="com.kong.board.DTO.BoardDTO">
+		update board set title = #{title}, ncontent = #{ncontent} where boardseq = #{boardseq} 
+	</update>
+	
+	<select id="rlist" resultType="com.kong.board.DTO.ReplyDTO">
+		select * from reply
+	</select>
+	
+	<select id="radd" resultType="com.kong.board.DTO.ReplyDTO">
+		insert into reply (reply, boardseq) values (#{reply}, #{boardseq}) 
+	</select>
+	
+	<select id="ajaxlist" resultType="com.kong.board.DTO.BoardDTO">
+		select * from board order by boardseq desc
+	</select>
+
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    

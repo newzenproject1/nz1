@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="login">
+	
+	<select id="log" parameterType="com.kong.board.DTO.LoginDTO" resultType="com.kong.board.DTO.LoginDTO">
+		select * from admin where adminid= #{adminid} and password= #{password}
+	</select>
+
+
+	<select id="ulog" parameterType="com.kong.board.DTO.UserLoginDTO" resultType="com.kong.board.DTO.UserLoginDTO">
+		select * from usr where userid= #{userid} and userpassword= #{userpassword}
+	</select>
+	
+	<insert id="useradd" parameterType="com.kong.board.DTO.UserLoginDTO">
+		insert into usr (userid, userpassword, writeO, readO) values (#{userid}, #{userpassword}, 'x', 'o')
+	</insert>
+	
+	
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    

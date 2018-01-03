@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="admin">
+	
+	
+	<select id="userlist" resultType="com.kong.board.DTO.UserLoginDTO">
+		select * from USR
+	</select>
+	
+	<delete id="userdel" parameterType="String">
+		delete from USR where userid = #{userid}
+	</delete>
+	
+	<update id="userwriteO" parameterType="com.kong.board.DTO.UserLoginDTO">
+		update USR set writeO = 'o' where userid = #{userid}
+	</update>
+	
+	<update id="userwriteX" parameterType="com.kong.board.DTO.UserLoginDTO">
+		update USR set writeO = 'x' where userid = #{userid}
+	</update>
+	
+
+</mapper>
